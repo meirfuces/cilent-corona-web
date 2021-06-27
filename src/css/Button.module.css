@@ -1,0 +1,83 @@
+
+  
+  .showMore{
+    background-color: rgb(255, 99, 132); /* Green */
+
+    color: white;
+ 
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+  }
+  .showLess{
+    background-color: #3b2fda; /* Green */
+ 
+
+    color: white;
+ 
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+  }
+  .showGraph{
+    background-color: #0f04a5; /* Green */
+ 
+
+    color: white;
+ 
+    padding: 7px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 14px;
+  }
+  .NextButton {
+    font: inherit;
+    border: 1px solid #4f005f;
+    background: #4f005f;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+  }
+  .BackButton {
+    font: inherit;
+    border: 1px solid #4f005f;
+    background: #ee0b0b;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+  }
+  
+  .button:hover,
+  .button:active {
+    background: #741188;
+    border-color: #741188;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  .th{
+    margin: 0;
+    padding: 0.5rem;
+    background-color: #333;
+  color: white;
+    border-bottom: 4px solid rgb(20, 7, 68);
+    border-right: 1px solid black;
+  }
+  .td {
+    margin: 0;
+    padding: 0.5rem;
+    border-bottom: 4px solid rgb(168, 63, 63);
+    border-right: 1px solid black;
+
+  
+  }
+
