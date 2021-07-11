@@ -65,9 +65,9 @@ const data =
         <MainHeader />
         <div  >
        <WorldMap styleFunction= {stylingFunction} color="red" title="corona death" value-suffix="people" size="xl" data={data} />
-       <a href= "https://reactjsexample.com/a-simple-compact-and-free-react-svg-world-map/"><h3 > https://reactjsexample.com/a-simple-compact-and-free-react-svg-world-map/</h3></a>
+       {/* <a href= "https://reactjsexample.com/a-simple-compact-and-free-react-svg-world-map/"><h3 > https://reactjsexample.com/a-simple-compact-and-free-react-svg-world-map/</h3></a> */}
     </div>
-    <h2>https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</h2>
+    {/* <h2>https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</h2> */}
 {/* <h1>World_map corona</h1>
 <a href= "https://www.react-simple-maps.io"><h3 > https://www.react-simple-maps.io/</h3></a>
 <hr></hr>

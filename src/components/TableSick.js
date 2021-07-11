@@ -1,29 +1,20 @@
 import React  ,{ useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
-import {createApiClient} from '../../api';
-import Graph_Corona from './graph_Corona';
-import  MainHeader from '../Layout/cart/mainHeader';
-import classes from '../../css/Button.module.css';
+import {createApiClient} from '../api';
+import Graph_Corona from './pages/graph_Corona';
+import  MainHeader from './Layout/cart/mainHeader';
 const api = createApiClient();
-const TableSickDeatails = (props)=>{
+const TableSick = (props)=>{
     // const params = useParams();
     const { id } = useParams();
     const [tableSickState, setTableSickState] = useState({});
-    const [predictJson, setpredictJson] = useState(null);
     useEffect(() => {
-        // async function fetchMyAPI() {
-        //   const res = await api.getJsonState();
-        //   setTableSickState(res.data);
-        //   console.log('tableSick did mount');
+       
     
         // }
         async function fetchMyAPI() {
             const res = await api.getJsonState();
-            const res2 = await api.predictByCountry();
-            console.log(res2.country[0].dates);
-            setpredictJson(
-                res2.country[0].dates
-            );
+            console.log(res.data);
             const equalCountry = id;
             const resNew = res.data.filter(data => data.location === equalCountry);
             setTableSickState({
@@ -31,9 +22,8 @@ const TableSickDeatails = (props)=>{
                 aged_65_older: resNew[0].aged_65_older,
                 aged_70_older: resNew[0].aged_70_older
             });
-            console.log(resNew[0]);
-            console.log({tableSickState});
-            console.log({predictJson});
+            console.log(resNew);
+          ;
           }
       
           fetchMyAPI()
@@ -42,14 +32,22 @@ const TableSickDeatails = (props)=>{
     return (
     <React.Fragment>
                   <MainHeader />
-        <h2 className={classes.cut}>{id}</h2>
 
-<Graph_Corona predictJson />
-
+                  { this.state.data? this.state.data.map(table =>
+        <TabkeSick
+         table = {this.state.allData}
+        key = {table.index}
+        date = {table.last_updated_date}
+        total_cases = {table.total_cases} 
+        country ={table.location}
+        new_cases = {table.new_cases} 
+        new_deaths={table.new_deaths}> fdf 
+        </TabkeSick>
+        ): null}
     </React.Fragment>
 );
 
 
 }
 
-export default TableSickDeatails
+export default TableSick;

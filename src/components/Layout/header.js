@@ -8,7 +8,7 @@ const Header =  props =>{
     <React.Fragment>
         <header className= {classes.header}>
         
-            <h1>corona</h1>
+            <h1 className="titleWeb">Web</h1>
         </header>
         {/* <div className = {classes['main-image']}>
             <img src ={corona_img} alt= 'corona web'/>

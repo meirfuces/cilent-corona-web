@@ -11,9 +11,9 @@ const MainHeader = () => {
           <li>
             <NavLink activeClassName= {classes.active} to='/welcome'>Welcome</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink activeClassName= {classes.active} to='/graph'>Graph</NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink activeClassName= {classes.active} to='/world_map'>worldMap</NavLink>
 
