@@ -6,9 +6,9 @@ const SearchBar = (props) => {
 
     const [bodySearch, setBodySearch] = useState({})
     return (
-        <div className="searchBar" >
-        <div className="searchRow" >
-
+        <React.Fragment>
+        <div className="element1" >
+       
             
       
 
@@ -18,11 +18,11 @@ const SearchBar = (props) => {
                     setBodySearch({
                          value: e.target.value
                     })}}></input>
-            
-
+               </div>
+            <div className="element2" >
             <button className="sendSearch" onClick={() => props.onSearch(bodySearch)}>search</button>
             </div>
-            </div>
+            </React.Fragment>
             );
 
 

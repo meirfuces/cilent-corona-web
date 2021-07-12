@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://localhost:5000';
+const url = 'https://radiant-woodland-94136.herokuapp.com/';
 
 
 
@@ -10,7 +10,7 @@ export const createApiClient = ()=> {
             .then((res) => res.data);
         },  
         predictByCountry: async() =>{
-            return axios.get("http://localhost:5000/predict")
+            return axios.get("https://radiant-woodland-94136.herokuapp.com/predict")
             .then((res) => res.data);
         }
     }

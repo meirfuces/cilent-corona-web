@@ -1,21 +1,42 @@
 import React from "react";
 import MainHeader from '../Layout/cart/mainHeader';
 import classes from '../../css/Creator.moudle.css';
+import '../../css/Creator.scss';
+import {Route, Link} from 'react-router-dom';
 
 const Creator_thank = ()=>{
 return (
     <React.Fragment>
             <MainHeader />
 
-<h1 className= {classes.crator} >Created By</h1>
-<h3 className= {classes.crator}>Meir Fuchs </h3>
-<h3 className= {classes.crator}> Oz Moyal</h3>
-<h3 className= {classes.crator}>Yonatan Choen</h3>
-<h3 className= {classes.crator}>Ginton Dorechler</h3>
-<p > instructed by Oren Barkan</p>
-<hr></hr>
-<a href= "https://github.com/meirfuces/Corona-Prediction-Web"><h3 > GitHub</h3></a>
 
+<div class="content">
+  <div class="wrapper-1">
+    <div class="wrapper-2">
+      <h1>Created By</h1>
+      {/* <p>Created By </p> */}
+      <p>Meir Fuchs</p>
+      <p>Oz Moyal</p>
+      <p>Meir Fuchs</p>
+      <p>Meir Fuchs</p>
+      <p>Yonatan Choen</p>
+      <p>Ginton Dorechler</p>
+      <button class="go-home">
+      <Link  to={'/'}>backHome</Link>
+      </button>
+     
+    </div>
+    <div class="footer-like">
+      <p>
+       <a href="https://github.com/meirfuces/Corona-Prediction-Web">GitHub</a>
+      </p>
+    </div>
+</div>
+</div>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet"></link>
 </React.Fragment>
 );
 }

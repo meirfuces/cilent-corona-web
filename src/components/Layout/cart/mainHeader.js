@@ -9,7 +9,7 @@ const MainHeader = () => {
         <ul>
          
           <li>
-            <NavLink activeClassName= {classes.active} to='/welcome'>Welcome</NavLink>
+            <NavLink activeClassName= {classes.active} to='/welcome'>Home</NavLink>
           </li>
           {/* <li>
             <NavLink activeClassName= {classes.active} to='/graph'>Graph</NavLink>

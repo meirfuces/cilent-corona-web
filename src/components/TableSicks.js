@@ -1,6 +1,8 @@
 import React ,{ useEffect, useState } from "react";
 // import './css/TableSicks'
+import '../css/table.scss';
 import '../css/TableSick.css';
+import  TableCountry from './Layout/TableCountry';
 import classes from '../css/Button.module.css';
 
 import {createApiClient} from '../api';
@@ -29,39 +31,56 @@ const TableSicks =(props)=>{
   <Route path = {'/welcome/${props.data}'}>
   <TableSickDeatails/>
   </Route>
-        <table className={classes.table} >
-            <tr>
-              
-          <th className={classes.th} >date</th>
-          <th className={classes.th}>country</th>
-          <th className={classes.th}>total_cases</th>
-          <th className={classes.th}>new_cases</th>
-          {showMoreState? <th className={classes.th}>new_deaths</th>: null}
-          
-          </tr>
-          <tr>
-            
-    <td className={classes.td} >{props.date}</td>
-    <td className={classes.td} >{props.country}</td>
-    <td className={classes.td} >{props.total_cases}</td>
-    <td className={classes.td} > {props.new_cases}</td>
-    {showMoreState?     <td className={classes.td}>{props.new_deaths}</td>: null}
-    <Link className={classes.showGraph} to={`/country/${props.country}`}>show Prediction</Link>
-      {/* <Link className={classes.showMore} to={'/country/${props.country}'} > show all graph</Link> */}
-   
-
-  </tr>
-
-
-
-     
-        </table>
-         {!showMoreState?
+  
+  <div class="container">
+	
+	<div class="table">
+             { !showMoreState?
         <button className={classes.showMore} onClick={()=>setshowMoreState(!showMoreState)}>  showMore </button>
         :
         <button className={classes.showLess}onClick={()=>setshowMoreState(!showMoreState)}> showLess</button> 
   
-} 
+}  
+		<div class="table-header">
+			<div class="header__item"><a id="name" class="filter__link">Date</a></div>
+			<div class="header__item"><a id="wins" class="filter__link filter__link--number" >Country</a></div>
+			<div class="header__item"><a id="draws" class="filter__link filter__link--number" >Total Cases</a></div>
+			<div class="header__item"><a id="losses" class="filter__link filter__link--number" >New Cases</a></div>
+      {showMoreState?	<div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">new death</a></div>: null}
+			<div class="header__item"><a id="losses" class="filter__link filter__link--number">Show Prediction</a></div>
+
+     
+		</div>
+		<div class="table-content">	
+    { props.table? props.table.map(table =>
+      // {if (table.location=== "Africa"){ 
+<TableCountry date = {props.date}
+   key = {table.index}
+        date = {table.last_updated_date}
+        total_cases = {table.total_cases} 
+        country ={table.location}
+        new_cases = {table.new_cases} 
+        new_deaths={table.new_deaths}
+        showMore = {showMoreState}
+          /> 
+       
+        ): null}
+			{/* <div class="table-row">		
+				<div class="table-data">{props.date}</div>
+				<div class="table-data">{props.country}</div>
+				<div class="table-data">{props.total_cases}</div>
+				<div class="table-data"> {props.new_cases}</div>
+				
+        {showMoreState?     <div class="table-data">{props.new_deaths}</div>: null}
+			</div> */}
+			<div class="table-row">
+      <Link className={classes.showGraph} to={`/country/${props.country}`}>show Prediction</Link>
+			</div>
+		
+		</div>	
+	</div>
+</div>
+
 </div>
 </Card>
     )};

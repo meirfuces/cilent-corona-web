@@ -1,0 +1,52 @@
+
+.btn{
+	margin: 20px auto;
+	border: none;
+	padding: 5px 20px;
+	font-size: 16px;
+	position: relative;
+	&::before{
+		transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		content: '';
+		width: 10%;
+		height: 100%;
+        
+		background: rgb(0, 1, 75);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	& .btn-text{
+		color: rgb(114, 24, 24);
+		// check out mdn docs for different types of blend modes. 
+		mix-blend-mode: difference;
+	}
+	&:hover{
+		&::before{
+			background: black;
+			width: 100%;
+		}
+	}
+	//rounded btn styles
+	&.rounded{
+		border-radius:10px;
+		& .text-green{
+			color:#9595b4;
+			mix-blend-mode: difference;
+		}
+		
+		&::before{
+			border-radius: 10px;
+			width: 10%;
+			background: #9595b4;
+		}
+		&:hover{
+			&::before{
+			background: #9595b4;
+				width: 100%;
+			}
+		}	
+	}
+}
+

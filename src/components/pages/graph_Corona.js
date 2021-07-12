@@ -4,20 +4,20 @@ import { Line } from 'react-chartjs-2';
 
 
 const Graph_Corona = (props)=>{
-  const dates = ['01.06','02.06','03.06','04.06','05.06','06.06'];
+  // const dates = {props.dates};
 const data = {
-    labels: dates,
+    labels: props.dates,
     datasets: [
       {
         label: 'corona death',
-        data: [12, 19, 3, 5, 2, 3],
+        data: props.sicks,
         fill: false,
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgba(255, 99, 132, 0.2)',
       },
       {
         label: 'corona death predict',
-        data: [11, 18, 4, 6, 2, 2],
+        data: props.sicksPredict,
         fill: false,
         backgroundColor: 'yellow',
         borderColor: 'yellow',

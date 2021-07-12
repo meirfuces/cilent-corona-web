@@ -4,12 +4,10 @@ import React, { Component } from 'react';
 import './css/App.css';
 import TabkeSick from './components/TableSicks';
 import './css/TableSick.css'
-import  MapChart from './components/MapChart';
 import {createApiClient} from './api';
 import Header from './components/Layout/header';
 import Button from './components/Butten/Button';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import PieChart from './components/PieChart';
 import Creator_thank from './components/pages/creator_thank';
 import MainHeader from './components/Layout/cart/mainHeader';
 import World_map from './components/pages/world_map';
@@ -24,7 +22,7 @@ class App extends Component {
   state = {
     data: null,
     allData:null,
-    page: 50,
+    page: 20,
     length: 211
   }
   async componentDidMount(){
@@ -87,22 +85,23 @@ class App extends Component {
 
         <Button clickedNext ={this.nextPage} clickedBack={this.backPage} length = {this.state.length} currpage = {this.state.page}></Button>
         
-        { this.state.data? this.state.data.map(table =>
+        {/* { this.state.data? this.state.data.map(table => */}
         <TabkeSick
-         table = {this.state.allData}
-        key = {table.index}
-        date = {table.last_updated_date}
-        total_cases = {table.total_cases} 
-        country ={table.location}
-        new_cases = {table.new_cases} 
-        new_deaths={table.new_deaths}> 
+         table = {this.state.data}
+        // key = {table.index}
+        // date = {table.last_updated_date}
+        // total_cases = {table.total_cases} 
+        // country ={table.location}
+        // new_cases = {table.new_cases} 
+        // new_deaths={table.new_deaths}
+        > 
         </TabkeSick>
 
    
-        ): null}
+        {/* ): null} */}
       
-{this.state.data? 
-this.state.data[0].continent : null}
+{/* {this.state.data? 
+this.state.data[0].continent : null} */}
         <Button clickedNext ={this.nextPage} clickedBack={this.backPage} length = {this.state.length} currpage = {this.state.page}></Button>
 
         </Route>
@@ -111,11 +110,14 @@ this.state.data[0].continent : null}
         <Route path ="/graph">
         <MainHeader />
           <Graph_Corona/></Route>
-        <Route path ="/world_map">< World_map/></Route>
+        <Route path ="/world_map">< World_map 
+         allData={this.state.allData}
+         /></Route>
         <Route path ="*">< NotFound/></Route>
        
         </Switch>
       </main>
+      
 
       {/* <PieChart></PieChart> */}
   {/* <div>
