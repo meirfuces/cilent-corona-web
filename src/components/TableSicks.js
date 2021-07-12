@@ -14,17 +14,17 @@ const api = createApiClient();
 const TableSicks =(props)=>{
   const [tableSickState, setTableSickState] = useState(null);
   const [showMoreState, setshowMoreState] = useState(false);
-  useEffect(() => {
-    async function fetchMyAPI() {
-      const res = await api.getJsonState();
-      setTableSickState(res.data)
-      console.log('tableSick did mount');
-      console.log(tableSickState);
+  // useEffect(() => {
+  //   async function fetchMyAPI() {
+  //     const res = await api.getJsonState();
+  //     setTableSickState(res.data)
+  //     console.log('tableSick did mount');
+  //     console.log(tableSickState);
 
-    }
+  //   }
   
  
-  }, [])
+  // }, [])
     return (
       <Card>
   <div className="TableSicks">
@@ -73,9 +73,7 @@ const TableSicks =(props)=>{
 				
         {showMoreState?     <div class="table-data">{props.new_deaths}</div>: null}
 			</div> */}
-			<div class="table-row">
-      <Link className={classes.showGraph} to={`/country/${props.country}`}>show Prediction</Link>
-			</div>
+
 		
 		</div>	
 	</div>

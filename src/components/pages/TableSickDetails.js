@@ -26,8 +26,10 @@ const CreateSicks = (sicks) =>{
     var arr = [];
     for (var i = 0; i < 7; i++) {
         var val = Math.floor(Math.random() * ((sicks+40) - (sicks-40)) ) + (sicks+40);
+        if (val<0)
+        val =0;
         arr.push(val);
-        sicks-=20;
+        sicks-=10;
     }
     return arr;
 } 

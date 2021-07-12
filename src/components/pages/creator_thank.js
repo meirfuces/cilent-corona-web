@@ -17,10 +17,11 @@ return (
       {/* <p>Created By </p> */}
       <p>Meir Fuchs</p>
       <p>Oz Moyal</p>
-      <p>Meir Fuchs</p>
-      <p>Meir Fuchs</p>
+
       <p>Yonatan Choen</p>
       <p>Ginton Dorechler</p>
+      <br></br>
+      <p > Instructed by Oren Barkan</p>
       <button class="go-home">
       <Link  to={'/'}>backHome</Link>
       </button>

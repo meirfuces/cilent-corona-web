@@ -15,6 +15,7 @@ import Graph_Corona from './components/pages/graph_Corona';
 import TableSickDeatails from './components/pages/TableSickDetails';
 import NotFound from './components/pages/NotFound';
 import SearchBar from './components/SearchBar';
+// import DownloadFile from './components/downloadFile';
 const api = createApiClient();
 
 
@@ -43,9 +44,10 @@ class App extends Component {
       // Typical usage (don't forget to compare props):
       if (this.state.page !== prevProps.page && this.state.page !== prevState.page) {
         
-   
-       const res = await api.getJsonState();
-        this.setState({data: res.data.slice(this.state.page-20,this.state.page)
+     
+      //  const res = await api.getJsonState();
+      //  console.log(this.state.allData);
+        this.setState({data: this.state.allData.slice(this.state.page-20,this.state.page)
       })
     }
  
@@ -80,6 +82,7 @@ class App extends Component {
         </Route>
         <Route path='/welcome' exact>
         <MainHeader />
+        {/* <DownloadFile/> */}
     <SearchBar
     onSearch={this.onSearch}/>
 
