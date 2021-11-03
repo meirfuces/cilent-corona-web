@@ -16,12 +16,7 @@ return (
       <h1>Created By</h1>
       {/* <p>Created By </p> */}
       <p>Meir Fuchs</p>
-      <p>Oz Moyal</p>
-
-      <p>Yonatan Choen</p>
-      <p>Ginton Dorechler</p>
-      <br></br>
-      <p > Instructed by Oren Barkan</p>
+    
       <button class="go-home">
       <Link  to={'/'}>backHome</Link>
       </button>
